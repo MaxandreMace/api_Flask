@@ -1,0 +1,186 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# Flask
+
+
+### Generate Random Value [/val]
+
+Cette ressource permet de générer un nombre aléatoire entre 1 et 100.
+
++ Parameters
+    + random_val (optional, number, `1` to `100`) - Valeur aléatoire à générer.
+
+#### GET
+
++ Response 200 (text/plain)
+
+    Retourne le chiffre généré.
+
+#### POST
+
++ Request (application/json)
+
+    + Body
+
+          {
+              "random_val": 50
+          }
+
++ Response 200 (text/plain)
+
+    Retourne le chiffre généré.
+
+
+### Adddition [/calc/add{?n1,n2}]
+
+Cette ressource permet de réaliser une addition de deux nombres.
+
++ Parameters
+  + n1 (number) - Le premier nombre.
+  + n2 (number) - Le deuxième nombre.
+
+#### GET
+
++ Response 200 (text/plain)
+
+    Retourne le résultat de l'addition.
+    
+### Multiplication [/calc/prod{?n1,n2}]
+
+Cette ressource permet de réaliser une multiplication de deux nombres.
+
++ Parameters
+  + n1 (number) - Le premier nombre.
+  + n2 (number) - Le deuxième nombre.
+
+#### GET
+
++ Response 200 (text/plain)
+
+Retourne le résultat de la multiplication.
+### Get Image [/img{?num}]
+
+Cette ressource permet de récupérer une image à partir d'un numéro spécifié.
+
++ Parameters
+  + num (number) - Le numéro de l'image (entre 1 et 9).
+
+#### GET
+
++ Response 200 (image/png)
+
+    Retourne l'image spécifiée par le numéro.
+
++ Response 400 (text/plain)
+
+    Indique un numéro d'image invalide.
+
+### Get Station Info ID [/stations_velo{?id}]
+
+Cette ressource permet d'obtenir les informations sur une station de vélo en libre-service.
+
++ Parameters
+  + id (string) - L'identifiant de la station.
+
+#### GET
+
++ Response 200 (application/json)
+
+    Retourne les informations de la station spécifiée.
+
++ Response 404 (application/json)
+
+    Indique que la station n'a pas été trouvée.
+    
+    
+### Get station vélo addresse [/stations_velo{?id}]
+
+Cette ressource permet d'obtenir l'adressee de la station 
++ Parameters
+    + id (required, string, `123`) ... L'ID de la station.
+    + addr (optional, boolean) ... Inclure l'adresse de la station.
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "station_id": "123",
+                "name": "Station ABC",
+                "address": "123, Rue de la Station",
+                "capacity": 20
+            }
+
++ Response 200 (text/plain)
+    + Body
+
+            123, Rue de la Station
+
++ Response 404 (application/json)
+    + Body
+
+            {
+                "error": "Station non trouvée"
+            }
+            
+
+
+# Stations Vélo [/stations_velo{?id,cap}]
+
+## Obtenir la capacité [GET]
+
++ Parameters
+    + id (required, string, `123`) ... L'ID de la station.
+    + cap (optional, boolean) ... Inclure la capacité de la station.
+
++ Response 200 (application/json)
+    + Headers
+        Content-Type: application/json
+    + Body
+        {
+            "station_id": "123",
+            "name": "Station de vélo 1",
+            "capacity": 20,
+            "location": "Paris"
+        }
+
++ Response 404 (application/json)
+    + Headers
+        Content-Type: application/json
+    + Body
+        {
+            "error": "Station non trouvée"
+        } 
+        
+
+
+# Stations Vélo [/stations_velo{?id,cap}]
+
+## Obtenir la capacité totale [GET]
+
++ Parameters
+    + id (required, string, `123`) ... L'ID de la station.
+    + cap (optional, boolean) ... Inclure la capacité de la station.
+
++ Response 200 (text/plain)
+    + Body
+
+            La capacité total de toutes les stations est de: 200
+            
+## Obtenir l'adresse d'une station [GET]
+
++ Parameters
+    + n (required, string) ... L'ID de la station.
+
++ Response 200 (text/plain)
+    + Body
+
+            123, Rue de la Station, Ville
+
++ Response 404 (application/json)
+    + Body
+
+            {
+                "error": "Station non trouvée"
+            } 
+         
