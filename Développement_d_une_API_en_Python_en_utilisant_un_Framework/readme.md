@@ -47,5 +47,11 @@ pip install flask-api
      - librairie nécesaire à installer et importer:
        - Image: ``` pip install Pillow``` ET importer image : ``` from PIL import Image```
        - IO : ```from io import BytesIO```
-
+   6) /stations_velo?id=15 :retourne l’ensemble des infos sur la station 15, sous forme d'un fichier json
+   7) /stations_velo?id=15&addr: retourne  l’adresse  de  la  station  de  vélo 15,  sous forme d’un texte 
+   8) /stations_velo?id=15&cap: qui  retourne  la  capacité  de  la  station  de  vélo n,  sous forme d’un nombre entier
+   9) /stations_velo?id=toutes&cap: retourne la capacité totale de l’ensemble des stations contenues dans le fichier
+   10) stations_velo/15/addr: retourne l’adresse de la station de vélo 15, sous forme d’un texte ( résultat similaire à l'endpoint 7)
+   11) stations_velo/15/cap: retourne  la  capacité  de  la  station  de  vélo 15,  sous forme d’un nombre entier (résultat similaire à l'endpoint 7)
+   12) /stations_velo/toutes/cap:retourne un json contenant, par id,la capacité de chaquestation  ainsi  que  la  capacité  de l’ensemble  des  stations  contenues  dans  le fichier
  
