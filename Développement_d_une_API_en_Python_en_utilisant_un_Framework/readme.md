@@ -26,8 +26,8 @@ Pour installer Flask API, suivez ces étapes :
 pip install flask-api
 ```
 ## Exemple de fonctionnement de l'api
-1) endpoint 1 : teste de l'api avec hello word
-2) endpoint 2: retourne une valeur aléatoire  entre 0 et 100:
+1) /: teste de l'api avec hello word
+2) /val : retourne une valeur aléatoire  entre 0 et 100:
     - avant installer la bibliothèque random
     ```
     pip install random
@@ -37,12 +37,12 @@ pip install flask-api
       a) GET :est une méthode HTTP utilisée pour récupérer des données à partir d'un serveur. Lorsqu'un utilisateur accède à l'URL /val avec une requête GET, la fonction val() sera exécutée, et elle renverra une réponse contenant un nombre entier aléatoire entre 0 et 100.
       
       b) POST :est une méthode HTTP utilisée pour envoyer des données au serveur. Si un utilisateur envoie une requête POST à l'URL /val, la fonction val() sera également exécutée et renverra une réponse contenant un nombre entier aléatoire entre 0 et 100.
- 3) endpoint 3: retourne du code json contenant un tableau de nvaleurs entières aléatoires comprises en -1000 et +1000
+ 3)/val?nb=n: retourne du code json contenant un tableau de nvaleurs entières aléatoires comprises en -1000 et +1000
   - librairie nécessaire : json
   ``` pip install jsonlib ```
   - module à importer de flask est: jsonify ``` from flask import jsonify ```
-  4) endpoint 4 et 5  : permet de faire des addition et multiplication
-  5) endpoint 6 : retourne une image
+  4) /calc/add?n1=n&n2=m et /calc/prod?n1=n&n2  : permet de faire des addition et multiplication
+  5) /img?num=3 : retourne une image
    - module nécesaire de flask send_file : ``` from flask import send_file ```
    - librairie nécesaire à installer et importer:
       - Image: ``` pip install Pillow``` ET importer image : ``` from PIL import Image```
