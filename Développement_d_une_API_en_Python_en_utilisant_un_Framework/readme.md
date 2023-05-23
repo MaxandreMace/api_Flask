@@ -10,7 +10,7 @@
 - Sécurité : Flask API inclut des fonctionnalités pour gérer l'authentification, l'autorisation et se protéger contre les vulnérabilités Web courantes.
 - Extensions : Étendez les fonctionnalités de Flask API avec une large gamme d'extensions développées par la communauté.
 ## Avantages et inconvéninets de l'api Flask:
-| avantages | inconvéninets |
+| avantages | inconvénients |
 |-----:|---------------|
 |Facile à apprendre et à utiliser|manquer de certaines fonctionnalités avancées.   |
 |Grande communauté de développeurs|dispose pas de certaines fonctionnalités d'organisation des fichiers et des dossiers            |
@@ -43,9 +43,9 @@ pip install flask-api
   - module à importer de flask est: jsonify ``` from flask import jsonify ```
   4) /calc/add?n1=n&n2=m et /calc/prod?n1=n&n2  : permet de faire des addition et multiplication
   5) /img?num=3 : retourne une image
-   - module nécesaire de flask send_file : ``` from flask import send_file ```
-   - librairie nécesaire à installer et importer:
-      - Image: ``` pip install Pillow``` ET importer image : ``` from PIL import Image```
-      - IO : ```from io import BytesIO```
+     - module nécesaire de flask send_file : ``` from flask import send_file ```
+     - librairie nécesaire à installer et importer:
+       - Image: ``` pip install Pillow``` ET importer image : ``` from PIL import Image```
+       - IO : ```from io import BytesIO```
 
  
